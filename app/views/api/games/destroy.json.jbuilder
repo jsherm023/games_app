@@ -1,0 +1,1 @@
+json.message "Your game has been destroyed"

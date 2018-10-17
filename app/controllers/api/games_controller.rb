@@ -30,4 +30,11 @@ class Api::GamesController < ApplicationController
       )  
     render "show.json.jbuilder"
   end
+
+  def destroy
+    @game = Game.find(params[:id])
+    @game.destroy
+    render "destroy.json.jbuilder"
+end
+
 end
