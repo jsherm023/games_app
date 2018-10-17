@@ -19,4 +19,15 @@ class Api::GamesController < ApplicationController
     @game = Game.find_by(id:params[:id])
     render "show.json.jbuilder"
   end
+
+  def update
+    @game = Game.find_by(id:params[:id])
+    @game.update(
+      creator: params[:creator],
+      title: params[:title],
+      description: params[:description],
+      price: params[:price]
+      )  
+    render "show.json.jbuilder"
+  end
 end
